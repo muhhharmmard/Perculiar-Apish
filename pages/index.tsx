@@ -28,6 +28,7 @@ const {
   user,
   categoriesWithProducts
 } = useAppContext();
+if(products && categoriesWithProducts){
   return (
     <div>
       <Head>
@@ -35,15 +36,14 @@ const {
         <meta name="description" content="Apish" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-   <div className="h-[60vh] overflow-scroll">
-   <Typography  variant="h1" className="aladin">
-   </Typography>
-   </div>
+  
    <Paper>
      <Categories categories={categoriesWithProducts} />
    </Paper>
     </div>
   )
+}
+return <Loader />
 }
 
 export default Home

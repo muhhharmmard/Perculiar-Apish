@@ -49,8 +49,13 @@ const AppWrapper = ({children})=> {
    useEffect(()=>{
      if(data){
     const prods = data.data
-    const categories= prods.map(prod=>  prod.category)
-    const categoriesWithProducts = (categories,prods) =>{
+    const categorieS =prods.map(prod=>  prod.category)
+    const categories = []
+    categorieS.forEach((category)=>{
+      if(!categories.includes(category)){
+        categories.push(category)
+      }
+    })
       let allCats = []
     categories.map(cat=>{
       let obj = {}
@@ -58,18 +63,21 @@ const AppWrapper = ({children})=> {
 obj.products = []
       allCats.push(obj)
     })
-    prods.map((prod,i)=>{
-      if(prod.category === allCats[i].name){
-       allCats[i].products.push(prod)
+    for(const prod of prods){
+      for(const cat of allCats){
+    
+      if(prod.category === cat.name){
+       cat.products.push(prod)
       }
-    })
-      return allCats
     }
+    }
+      const categoriesWithProducts= allCats
+    
     setValue({
       user:useR,
       products:prods,
       categories:new Set(categories),
-      categoriesWithProducts:categoriesWithProducts(prods, categories)
+      categoriesWithProducts:categoriesWithProducts
     })
     
      }
@@ -85,7 +93,7 @@ obj.products = []
    if(isLoading){
      
    }
-  if(data){f
+  if(data){
   }
     return (
   <AppContext.Provider value={value}>
@@ -102,10 +110,6 @@ export function useAppContext() {
 }
 
 
-const {
-  products,
-  categories,
-  user,
-  categoriesWithProducts
-} = useAppContext();
+
+
 
