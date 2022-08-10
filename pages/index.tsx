@@ -8,9 +8,10 @@ import {
   Paper
 } from "@mui/material"
 import Loader from "../Components/Loader"
+import Categories from "../Components/Categories"
 
  import { useSession } from "next-auth/react"
-
+import { useAppContext } from "../store/context"
 const Home: NextPage = () => {
   const router = useRouter()
    const { data: session } = useSession();
@@ -20,6 +21,13 @@ const Home: NextPage = () => {
        
      }
    },[session])
+   
+const {
+  products,
+  categories,
+  user,
+  categoriesWithProducts
+} = useAppContext();
   return (
     <div>
       <Head>
@@ -32,6 +40,7 @@ const Home: NextPage = () => {
    </Typography>
    </div>
    <Paper>
+     <Categories categories={categoriesWithProducts} />
    </Paper>
     </div>
   )

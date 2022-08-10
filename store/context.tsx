@@ -43,41 +43,56 @@ const AppWrapper = ({children})=> {
      setUseR(datum.user)
 }
    },[datum])
+   const filter = (prods,categories) =>{
+     
+   }
    useEffect(()=>{
      if(data){
     const prods = data.data
     const categories= prods.map(prod=>  prod.category)
+    const categoriesWithProducts = (categories,prods) =>{
+      let allCats = []
+    categories.map(cat=>{
+      let obj = {}
+      obj.name = cat
+obj.products = []
+      allCats.push(obj)
+    })
+    prods.map((prod,i)=>{
+      if(prod.category === allCats[i].name){
+       allCats[i].products.push(prod)
+      }
+    })
+      return allCats
+    }
     setValue({
       user:useR,
       products:prods,
-      categories:new Set(categories)
+      categories:new Set(categories),
+      categoriesWithProducts:categoriesWithProducts(prods, categories)
     })
+    
      }
    },[data])
    if(error){
      error.data.isLoggedIn && router.push("/login")
      return (
      <Typography variant="h1">
-     Error
+     
      </Typography>
      )
    }
    if(isLoading){
      
-     return(
-       <div>
-       <Loader/>
-       </div>
-       )
    }
-  if(data){
-    
+  if(data){f
+  }
     return (
   <AppContext.Provider value={value}>
   {children}
   </AppContext.Provider>
   )
-  }
+  
 }
 
 export default AppWrapper
@@ -85,4 +100,12 @@ export default AppWrapper
 export function useAppContext() {
   return useContext(AppContext)
 }
+
+
+const {
+  products,
+  categories,
+  user,
+  categoriesWithProducts
+} = useAppContext();
 
