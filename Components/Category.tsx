@@ -19,7 +19,7 @@ const Category = ({category}) =>{
     {category.name}
     </Typography>
     </Container>
-    <Container className="p-2 m-2 ">
+    <Container className="flex flex-wrap p-2 m-2 ">
     {
       category.products.map((prod)=> <DeptPro product={prod}/>)
     }

@@ -2,8 +2,6 @@ import { useRouter } from "next/router"
 import Products from "../Components/Products"
 import dbConnect from "../Lib/dbconnect"
 import Product from "../Models/Product"
-import Department from "../Models/Department"
-import Tag from "../Models/Tag"
 import {
   Typography
 } from "@mui/material"
@@ -34,10 +32,8 @@ export async function getServerSideProps(context) {
   await dbConnect()
 
   /* find all the data in our database */
-  const product = await Product.find({name:search})
-    const dep = await Department.find({name:search},);
-   const tag = await Tag.find({name:search});
-   const res = [...product,...dep,...tag]
+  const product = await Product.find({name:search}
+   const res = [...product]
   const results= res.map((doc)=>{
     const re = doc.toObject();
     re._id = doc._id.toString();

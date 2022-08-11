@@ -22,7 +22,7 @@ const DeptPro= ({product})=>{
   }
  
   return(
-    <Card className="h-[20vh] w-1/3 p-8 m-3 leading-3 min-w-[30vw] rounded-3xl" raised={true} onClick={navToProduct}>
+    <Card className="h-[20vh] w-1/3 p-8 m-3 leading-3 min-w-[30vw] rounded-3xl overflow-scroll" raised={true} onClick={navToProduct}>
     <figure className="">
     <img src={product.image} className="rounded-lg shadow-lg h-2/3 w-full"/>
     </figure>

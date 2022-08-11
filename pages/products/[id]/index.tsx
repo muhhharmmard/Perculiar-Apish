@@ -7,19 +7,31 @@ import Link from 'next/link'
 import {
   Typography,
   Card,
-  Button
+  Button,
+  Container
 } from "@mui/material"
-import {
-  useGetAllProductsQuery,
-  useDeleteProductMutation
-} from "../../../store/services/products"
+import { useAppContext } from "../../../store/context"
 import RelatedProd from "../../../Components/RelatedProd"
 import Loader from "../../../Components/Loader"
-
+import BuyProd from "../../../Components/Flutter"
 const ProductPage = () => {
   const router = useRouter();
-  const session= useSession() 
+  const { data:session }= useSession() 
   const [message, setMessage]:string = useState('')
+  
+const {
+  products,
+  categories,
+  user,
+  categoriesWithProducts
+} = useAppContext();
+const addProdToCart = () =>{
+  
+}
+const buyProd = () =>{
+  
+}
+  /*
   const [deleteProduct]=useDeleteProductMutation()
   const handleDelete = async () => {
     const productID = router.query.id
@@ -39,7 +51,7 @@ const ProductPage = () => {
 
     try {
    //  if(product.owner.name===session.user.name){
-      router.push('/products/[id]/edit',{
+      router.push('/products/[id]/edit',{the
         query:{
           product:product
         }
@@ -49,35 +61,13 @@ const ProductPage = () => {
     } catch (error) {
       setMessage('Failed to delete the products.')
     }
-  }
-  const {
-   data:allProd,
-   error,
-   isLoading,
-   isSuccess
- } = useGetAllProductsQuery();
-  
- 
-  if(error){
-     return (
-     <Typography variant="h1">
-     {Object.values(error.data)}
-     </Typography>
-     )
-   }
-   if(isLoading){
-     return(
-       <div>
-       <Loader/>
-       </div>
-       )
-   }
-if(allProd){
-  const { data } = allProd;
-  const prod = data.filter((data)=>data._id === router.query.id)
+  }*/
+if(categoriesWithProducts){
+  const prod = products.filter((data)=>data._id === router.query.id)
+  const category = categoriesWithProducts.filter((at)=> at.name === prod[0].category)
   return (
 
-    <Card key={prod[0].id} className="flex flex-col justify-center w-screen text-center bg-blue-400">
+    <Card key={prod[0]._id} className="flex flex-col justify-center w-screen text-center">
   {/* <Button onlick={handleDelete}>Delete</Button>
    <Button onclick={handleEdit}>Edit</Button>*/}
     <div className="">
@@ -99,16 +89,24 @@ if(allProd){
    {prod[0].description}
    </Typography>
    </div>
+   <Container className="p-2 flex w-screen justify-center">
+   <BuyProd 
+   amount={prod[0].price}
+   user={session.user}
+   />
+   <Button className="w-5/6" onClick={addProdToCart}> Add to Cart </Button>
+   </Container>
    <div className="">
    <Typography variant="h3">
    People also search for
    </Typography>
-   <RelatedProd products={data} product={prod[0]}/>
+   <RelatedProd category={category[0]}/>
    </div>
    {message}
      </Card>
   )
 }
+return <Loader />
 }
 
 
