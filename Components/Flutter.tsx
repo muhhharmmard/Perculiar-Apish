@@ -42,7 +42,7 @@ const BuyProd =({user, amount })=>{
           });
         }}
       >
-        Pay
+        Buy now
       </button>
     </div>
   );

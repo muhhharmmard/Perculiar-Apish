@@ -70,6 +70,8 @@ callbacks: {
     profile.apish=5000;
     account.apish=5000;
     user.apish=5000;
+    user.wishlist =[];
+    user.cart = []
     return true;
 },
 async session({ session,account,user }) {
