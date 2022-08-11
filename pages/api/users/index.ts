@@ -1,5 +1,5 @@
 import dbConnect from '../../../Lib/dbconnect'
-import Product from '../../../Models/Product'
+import User from '../../../Models/User'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {unstable_getServerSession} from "next-auth/next"
 import { authOptions } from "../auth/[...nextauth]"
@@ -14,8 +14,8 @@ const session = await unstable_getServerSession(req, res, authOptions)
   switch (method) {
     case 'GET':
       try {
-        const ts = await Product.find({}) /* find all the data in our database */
-        res.status(200).json({ success: true, data: ts })
+        const dd = await User.find({}) /* find all the data in our database */
+        res.status(200).json({ success: true, data: dd })
       } catch (error) {
         res.status(400).json({ success: false })
       }
@@ -23,11 +23,11 @@ const session = await unstable_getServerSession(req, res, authOptions)
     case 'POST':
       if(session){
       try {
-        const product = await Product.create(
+        const user = await User.create(
           req.body
         ) /* create a new model in the database */
-        console.log(product)
-        res.status(201).json({ success: true, data: product })
+        console.log(user)
+        res.status(201).json({ success: true, data: user })
       } catch (error) {
         console.log("ERROR")
         res.status(400).json({ success: false })

@@ -67,9 +67,6 @@ callbacks: {
     return baseUrl*/
   },
   async signIn({account, profile,user,session}) {
-    profile.apish=5000;
-    account.apish=5000;
-    user.apish=5000;
     user.wishlist =[];
     user.cart = []
     return true;
