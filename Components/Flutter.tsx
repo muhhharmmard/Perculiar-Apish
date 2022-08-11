@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
-
+import { Button } from "@mui/material"
 const BuyProd =({user, amount })=>{
   try{
   const config = {
@@ -31,7 +31,7 @@ const BuyProd =({user, amount })=>{
     <div className="App">
      
 
-      <button
+      <Button
         onClick={() => {
           handleFlutterPayment({
             callback: (response) => {
@@ -43,7 +43,7 @@ const BuyProd =({user, amount })=>{
         }}
       >
         Buy now
-      </button>
+      </Button>
     </div>
   );
   }

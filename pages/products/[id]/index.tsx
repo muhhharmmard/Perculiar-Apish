@@ -28,8 +28,8 @@ const {
 const addProdToCart = () =>{
   
 }
-const buyProd = () =>{
-  
+const addProdToWishList = (product) =>{
+  user.wishlist.push(product)
 }
   /*
   const [deleteProduct]=useDeleteProductMutation()
@@ -67,7 +67,7 @@ if(categoriesWithProducts){
   const category = categoriesWithProducts.filter((at)=> at.name === prod[0].category)
   return (
 
-    <Card key={prod[0]._id} className="flex flex-col justify-center w-screen text-center">
+    <Card key={prod[0]._id} className="flex flex-col justify-center w-screen text-center m-2 p-2">
   {/* <Button onlick={handleDelete}>Delete</Button>
    <Button onclick={handleEdit}>Edit</Button>*/}
     <div className="">
@@ -90,11 +90,16 @@ if(categoriesWithProducts){
    </Typography>
    </div>
    <Container className="p-2 flex w-screen justify-center">
+   
    <BuyProd 
    amount={prod[0].price}
    user={session.user}
    />
-   <Button className="w-5/6" onClick={addProdToCart}> Add to Cart </Button>
+   
+   <Button className="" onClick={addProdToCart}> Add to Cart </Button>
+   
+   <Button className="" onClick={addProdToWishList}> Add to wishlist</Button>
+   <Button className="" onClick={addProdToCart}> Add to Cart </Button>
    </Container>
    <div className="">
    <Typography variant="h3">
