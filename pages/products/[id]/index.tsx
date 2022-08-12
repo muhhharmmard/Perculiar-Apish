@@ -10,6 +10,7 @@ import { useEditUserMutation } from "../../../store/services/user";
 import RelatedProd from "../../../Components/RelatedProd";
 import Loader from "../../../Components/Loader";
 import BuyProd from "../../../Components/Flutter";
+import Head from "next/head";
 const ProductPage = () => {
   const router = useRouter();
   const { data: session } = useSession();
@@ -112,52 +113,59 @@ const ProductPage = () => {
       (at) => at.name === prod[0].category
     );
     return (
-      <Card
-        key={prod[0]._id}
-        className="flex flex-col justify-center w-screen text-center m-2 p-2"
-      >
-        {/* <Button onlick={handleDelete}>Delete</Button>
+      <div>
+        <Head>
+          <title>{prod[0].title}</title>
+          <link rel="icon" href={prod[0].image} />
+        </Head>
+        <Card
+          key={prod[0]._id}
+          className="flex flex-col justify-center w-screen text-center m-2 p-2"
+        >
+          {/* <Button onlick={handleDelete}>Delete</Button>
    <Button onclick={handleEdit}>Edit</Button>*/}
-        <div className="">
-          <Typography variant="h1">{prod[0].name}</Typography>
-          <figure className="flex w-screen justify-center flex-row text-center">
-            <img src={prod[0].image} className="rounded shadow-xl h-64 w-64" />
-          </figure>
-          <Typography variant="h3">Price:{prod[0].price}</Typography>
-          <Typography variant="h4">Trending in {prod[0].category}</Typography>
-        </div>
-        <div className="p-2 m-3">
-          <Typography variant="h6">{prod[0].description}</Typography>
-        </div>
-        <Container className="p-2 flex w-screen justify-center">
-          <BuyProd amount={prod[0].price} user={session.user} />
+          <div className="">
+          
+            <figure className="flex w-screen justify-center flex-row text-center">
+              <img
+                src={prod[0].image}
+                className="rounded shadow-xl h-[15vh] w-[15vw]"
+              />
+                <Typography variant="h1">{prod[0].title}</Typography>
+            </figure>
+            <Typography variant="h3">Price:{prod[0].price}</Typography>
+            <Typography variant="h4">Trending in {prod[0].category}</Typography>
+          </div>
+          <div className="p-2 m-3">
+            <Typography variant="h6">{prod[0].description}</Typography>
+          </div>
+          {session ? (
+          <Container className="p-2 flex w-screen justify-center">
+            <BuyProd amount={prod[0].price} user={session.user} />
 
-          <Button
-            className=""
-            onClick={() => addProdToCart(prod[0], session.user)}
-          >
-            {" "}
-            Add to Cart{" "}
-          </Button>
+            <Button
+              className=""
+              onClick={() => addProdToCart(prod[0], session.user)}
+            >
+              {" "}
+              Add to Cart{" "}
+            </Button>
 
-          <Button
-            className=""
-            onClick={() => addProdToWishList(prod[0], session.user)}
-          >
-            {" "}
-            Add to wishlist
-          </Button>
-          <Button className="" onClick={addProdToCart}>
-            {" "}
-            Add to Cart{" "}
-          </Button>
-        </Container>
-        <div className="">
-          <Typography variant="h3">People also search for</Typography>
-          <RelatedProd category={category[0]} />
-        </div>
-        {message}
-      </Card>
+            <Button
+              className=""
+              onClick={() => addProdToWishList(prod[0], session.user)}
+            >
+              {" "}
+              Add to wishlist
+            </Button>
+          </Container>):""}
+          <div className="">
+            <Typography variant="h3">People also search for</Typography>
+            <RelatedProd category={category[0]} />
+          </div>
+          {message}
+        </Card>
+      </div>
     );
   }
   return <Loader />;
