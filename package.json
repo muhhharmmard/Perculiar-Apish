@@ -12,6 +12,12 @@
     "lint": "next lint",
     "test": "jest --watch"
   },
+  "author":{
+    "name":"Adetonwa Richard ",
+    "email":"culestfrosh@gmail.com",
+    "github":"Peculiar-codes",
+    "twitter":"Peculiar-codes"
+  },
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
