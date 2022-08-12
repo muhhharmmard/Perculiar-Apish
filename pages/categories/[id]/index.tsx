@@ -21,7 +21,7 @@ const CategoryId: NextPage = () => {
     useAppContext();
   const category = router.query.id;
   if (products && categoriesWithProducts) {
-    const data= categoriesWithProducts.filter(da=>da.name === category)
+    const data = categoriesWithProducts.filter((da) => da.name === category);
     return (
       <div>
         <Head>
@@ -31,7 +31,8 @@ const CategoryId: NextPage = () => {
         </Head>
 
         <Paper>
-        <Products products={data[0].products}/>
+          <Typography variant="h1">{category}</Typography>
+          <Products products={data[0].products} />
         </Paper>
       </div>
     );
