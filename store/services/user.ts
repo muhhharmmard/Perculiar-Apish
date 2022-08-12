@@ -26,13 +26,10 @@ export const userApi = createApi({
       }),
     }),
     editUser: builder.mutation({
-      query: (id, body) => ({
+      query: ({ id, ...body }) => ({
         url: `/${id}`,
-        method: "PATCH",
-        body: {
-          body,
-          id,
-        },
+        method: "PUT",
+        body: body,
       }),
     }),
   }),
