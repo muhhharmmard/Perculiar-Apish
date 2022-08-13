@@ -8,13 +8,12 @@ import {
 import Search from "./Search"
 import React,{
   useState,
-  useRef,
-  FC
+  useRef
 } from "react"
 import Sidebar from "./Sidebar"
 import { useSession, signIn, signOut } from "next-auth/react"
 
-const Header:FC = ()=>{
+const Header = () =>{
   const {data}= useSession();
    return(
    <Card className=" font-2xl w-screen flex flex-col justify-center  text-center">
