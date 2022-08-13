@@ -6,8 +6,8 @@ import {
   Card
 } from "@mui/material"
 import DeptPro from "./DeptPro"
-import { PRODUCTS,PRODUCT } from "../store/types"
-const RelatedProd = ({category}):JSX.Element => {
+import { CATEGORY } from "../store/types"
+const RelatedProd = ({category}: CATEGORY):JSX.Element => {
   const router = useRouter()
   const [message, setMessage]: string = useState('')
  

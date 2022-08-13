@@ -9,7 +9,12 @@ import {
 import {useRouter} from "next/router"
 
 
-const DeptPro= ({product})=>{
+import {
+  PRODUCT
+} from "../store/types"
+
+
+const DeptPro= ({product}: PRODUCT)=>{
   
   const router = useRouter();
   const navToProduct = () =>{

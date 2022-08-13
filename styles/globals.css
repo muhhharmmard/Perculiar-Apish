@@ -65,7 +65,7 @@ body{
    font-family: Light,"cursive",
    "sans-serif";
 }
-@media screen and (min-width:400pz){
+@media screen and (min-width:400px){
   *,
  html,
   body{

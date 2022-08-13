@@ -1,25 +1,29 @@
-export type DEPARTMENT ={
-  name:string,
-  owner:OWNER,
-  tags: TAGS,
-  Products: PRODUCTS| null
-}
-export type TAG ={
-  name:string,
-  department: DEPARTMENT,
-  owner: OWNER 
-}
-export type TAGS = TAG[]
-export type PRODUCTS = PRODUCTS[]
-export type DEPARTMENTS= DEPARTMENT []
-export type OWNER = object
-export type PRODUCT ={
-  name:string,
-  department: DEPARTMENT,
-  tags: TAGS,
-  price:number,
-  owner: OWNER 
-}  
+export type USER = {
+  name: String,
+  image: String,
+  email: String,
+  cart: Array,
+  wishlist: Array,
+  emailVerified: any
+};
 
+export type USERS = USER[];
 
+export type PRODUCT = {
+  title: String,
+  image: String,
+  category: String,
+  description: String,
+  rating: Object,
+  price: Number,
+  countInStock: Number,
+};
 
+export type PRODUCTS = PRODUCT[];
+
+export type CATEGORY = {
+  name: string,
+  products: PRODUCTS,
+};
+
+export type CATEGORIES = CATEGORY[];

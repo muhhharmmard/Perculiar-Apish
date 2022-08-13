@@ -7,8 +7,12 @@ import {
 } from "@mui/material"
 
 
+import {
+  PRODUCTS
+} from "../store/types"
 
-const SearchResults = ({res}) =>{
+
+const SearchResults = ({res}: PRODUCTS):JSX.Element =>{
   const router = useRouter()
   return (
     <>
