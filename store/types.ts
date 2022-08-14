@@ -4,7 +4,8 @@ export type USER = {
   email: String,
   cart: Array,
   wishlist: Array,
-  emailVerified: any
+  emailVerified: any,
+  products?: PRODUCTS
 };
 
 export type USERS = USER[];
