@@ -34,6 +34,9 @@ const Home: NextPage = () => {
   const getStarted = () => {
     router.push("/sell/dashboard")
   }
+  const createNewProd = () =>{
+    router.push("/create")
+  }
   return (
     <div>
       <Head>
@@ -47,6 +50,9 @@ const Home: NextPage = () => {
     </header>
     <main>
     <Container>
+    <Container lassName= "flex justify-end">
+    <Button onClick={createNewProd}>Add Product</Button>
+    </Container>
     <Typography variant="h3">Your Products</Typography>
     {
         user.products.length > 0 ?
