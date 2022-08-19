@@ -12,11 +12,11 @@
     "lint": "next lint",
     "test": "jest --watch"
   },
-  "author":{
-    "name":"Adetonwa Richard ",
-    "email":"culestfrosh@gmail.com",
-    "github":"Peculiar-codes",
-    "twitter":"Peculiar-codes"
+  "author": {
+    "name": "Adetonwa Richard ",
+    "email": "culestfrosh@gmail.com",
+    "github": "Peculiar-codes",
+    "twitter": "Peculiar-codes"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -39,7 +39,8 @@
     "react-redux": "^8.0.2",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
-    "tailwind": ""
+    "tailwind": "",
+    "tailwindcss-multi-theme": "^1.0.4"
   },
   "devDependencies": {
     "@types/node": "18.0.0",
