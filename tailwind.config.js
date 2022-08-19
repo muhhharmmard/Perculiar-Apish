@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode:'class',
   content: [
     "./pages/**/*.{ts,tsx}",
     "./pages/products/**/*.{ts,tsx}",
@@ -10,9 +11,6 @@ module.exports = {
     themeVariants: [],
     extend: {},
   },
-  variants: {
-  },
+  variants: {},
   plugins: [],
 }
-
-

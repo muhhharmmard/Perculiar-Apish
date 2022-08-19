@@ -80,7 +80,8 @@ const AppWrapper = ({
   const oldTheme = usePrevious(theme)
   useLayoutEffect(() => {
     document.documentElement.classList.remove(`theme-${oldTheme}`)
-    document.documentElement.classList.add(`theme-${theme}`)
+    document.documentElement.classList.remove(oldTheme)
+    document.documentElement.classList.add(theme)
   },
     [theme,
       oldTheme])
