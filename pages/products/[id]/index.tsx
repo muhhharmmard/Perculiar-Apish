@@ -15,7 +15,8 @@ const ProductPage = () => {
   const router = useRouter();
   const { data: session } = useSession();
   const [message, setMessage]: string = useState("");
-
+const [remove,setRemove] = useState(false)
+const [remove2,setRemove2] = useState(false)
   const { products, categories, user, categoriesWithProducts } =
     useAppContext();
   const [editUser] = useEditUserMutation();
@@ -31,7 +32,8 @@ const ProductPage = () => {
       return false;
     };
     const isPresent = present();
-    if (isPresent) {
+    if (!isPresent) {
+      setRemove(true)
       cart.push(product);
       const body = {
         ...user,
@@ -60,7 +62,8 @@ const ProductPage = () => {
       return false;
     };
     const isPresent = present();
-    if (isPresent) {
+    if (!isPresent) {
+      setRemove2(true)
       wishlist.push(product);
       const body = {
         ...user,
@@ -148,7 +151,7 @@ const ProductPage = () => {
               onClick={() => addProdToCart(prod[0], session.user)}
             >
               {" "}
-              Add to Cart{" "}
+              { remove ? "Remove" : "Add" } to Cart{" "}
             </Button>
 
             <Button
@@ -156,7 +159,8 @@ const ProductPage = () => {
               onClick={() => addProdToWishList(prod[0], session.user)}
             >
               {" "}
-              Add to wishlist
+              
+              { remove2 ? "Remove" : "Add" } to wishlist
             </Button>
           </Container>):""}
           <div className="">
