@@ -45,11 +45,11 @@ const AppWrapper = ({
     setUseR] = useState(null);
   const [value,
     setValue] = useState({
-      user: {},
+      user: null,
       products: [],
       categories: [],
       categoriesWithProducts: [],
-      theme:""
+      theme:"light"
     });
 
   const {
