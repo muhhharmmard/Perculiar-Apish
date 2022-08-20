@@ -6,30 +6,36 @@ import {
   Container,
   Badge
 } from "@mui/material"
-import {useRouter} from "next/router"
-import { PRODUCT} from "../store/types"
+import {
+  useRouter
+} from "next/router"
+import {
+  PRODUCT
+} from "../store/types"
 
-const Product= ({product}: PRODUCT):JSX.Element=>{
+const Product = ({
+  product
+}: PRODUCT): JSX.Element=> {
   const router = useRouter();
-  const navToProduct = () =>{
+  const navToProduct = () => {
     router.push({
-     pathname:"/products/[id]",
-      query:{
-        id:product._id,
-        product:product
+      pathname: "/products/[id]",
+      query: {
+        id: product._id,
+        product: product
       }
     })
   }
   return(
-    <Card className="h-[20vh] w-full p-8 flex my-8 leading-8 rounded-3xl" raised={true} onClick={navToProduct}>
+    <Card className="h-[30vh] w-full p-8 flex my-8 leading-8  align-center big justify-center rounded-3xl" raised={true} onClick={navToProduct}>
     <figure className="">
-    <img src={product.image} className="rounded-lg shadow-lg h-full w-[35vw]"/>
+    <img src={product.image} className="rounded-lg shadow-lg h-full w-[35vw]" />
     </figure>
     <div className="container m-2 leading-8">
     <Typography variant="h3">
-    {product.title} 
+    {product.title}
     </Typography>
-    <br/>
+    <br />
 
     <Typography variant="h5">
    Price: ${product.price}
@@ -37,10 +43,8 @@ const Product= ({product}: PRODUCT):JSX.Element=>{
     <Typography variant="h5">
     Category:{product.category}
     </Typography>
-    </div>
+  </div>
     </Card>
-    )
+)
 }
 export default Product
-
-
