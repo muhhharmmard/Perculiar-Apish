@@ -21,7 +21,7 @@ const Layout= ({children})=>{
     `}
     </style>
     </Head>
-    <Card className="italic text-[3px]">
+    <Card className="italic text-[3px] w-screen md:w-[75vw] Layout [box-sizing:border-box] border-box p-2">
     {children}
     </Card>
     </>
