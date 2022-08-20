@@ -3,7 +3,8 @@ import {
   useState,
   useContext,
   useEffect,
-  useRef
+  useRef,
+  useLayoutEffect
 } from "react";
 
 import {
@@ -47,6 +48,8 @@ const AppWrapper = ({
       user: {},
       products: [],
       categories: [],
+      categoriesWithProducts: [],
+      theme:""
     });
 
   const {
@@ -69,10 +72,10 @@ const AppWrapper = ({
 
   // set user's preferred color scheme on first load
   useLayoutEffect(() => {
-    setTheme(
+    /*setTheme(
       !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
       ? 'dark': 'light'
-    )
+    )*/
   },
     [])
 
@@ -82,6 +85,8 @@ const AppWrapper = ({
     document.documentElement.classList.remove(`theme-${oldTheme}`)
     document.documentElement.classList.remove(oldTheme)
     document.documentElement.classList.add(theme)
+
+    document.documentElement.classList.add(`theme-${theme}`)
   },
     [theme,
       oldTheme])
@@ -112,18 +117,20 @@ const AppWrapper = ({
       }
       const categoriesWithProducts = allCats;
 
-  function toggleTheme() {
-    if (theme === 'light') setTheme('dark')
-    else setTheme('light')
-  }
+      function toggleThemeF() {
+        alert(theme)
+        if (theme === 'light') {
+          setTheme('dark')
+        } else setTheme('light')
+      }
 
       setValue({
         user: useR,
         products: prods,
         categories: new Set(categories),
         categoriesWithProducts: categoriesWithProducts,
-        theme:theme,
-        toggleTheme:toggleTheme
+        theme: theme,
+        toggleTheme: ()=>{ toggleThemeF()}
       });
     }
   },
