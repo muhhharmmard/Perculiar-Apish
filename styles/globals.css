@@ -4,73 +4,84 @@
 @tailwind base;
 @tailwind components;
 @font-face {
-  font-family: "aladin";   /*Can be any text*/
+  font-family: "aladin"; /*Can be any text*/
   src: local("./fonts/aladin.ttf"),
-    url("../fonts/aladin.ttf") format("truetype");
-  
+  url("../fonts/aladin.ttf") format("truetype");
+
 }
 @font-face {
-  font-family: "bangers";   /*Can be any text*/
+  font-family: "bangers"; 
+  /*Can be any text*/
   src: local("./fonts/bangers.ttf"),
-    url("../fonts/bangers.ttf") format("truetype");
-  
+  url("../fonts/bangers.ttf") format("truetype");
+
 }
 @font-face {
-  font-family: "big";   /*Can be any text*/
+  font-family: "big"; /*Can be any text*/
   src: local("./fonts/big.ttf"),
-    url("../fonts/big.ttf") format("truetype");
-  
+  url("../fonts/big.ttf") format("truetype");
+
 }
 @font-face {
-  font-family: "praise";   /*Can be any text*/
+  font-family: "praise"; /*Can be any text*/
   src: local("./fonts/praise.ttf"),
-    url("../fonts/praise.ttf") format("truetype");
-  
+  url("../fonts/praise.ttf") format("truetype");
+
 }
 @font-face {
-  font-family: "Light";   /*Can be any text*/
+  font-family: "Light"; /*Can be any text*/
   src: local("../fonts/aladin.ttf"),
-    url("../fonts/aladin.ttf") format("truetype");
-  
+  url("../fonts/aladin.ttf") format("truetype");
+
 }
 @font-face {
-  font-family: "Light";   /*Can be any text*/
+  font-family: "Light"; /*Can be any text*/
   src: local("../fonts/aladin.ttf"),
-    url("../fonts/aladin.ttf") format("truetype");
-  
+  url("../fonts/aladin.ttf") format("truetype");
+
 }
 
 *,
 html,
-body{
-  font-size:4px
+body {
+  font-size: 5px;
+
+
+
+  background-image: linear-gradient(#000,#e056fd);
+  color: #d902ee;
+  font-family: bangers,"cursive",
+  "sans-serif";
 }
-.aladin{
-   font-family: Light,"cursive",
-   "sans-serif";
+.Layout {
+
+  background-image: linear-gradient(#0652c5,#D4418f);
+  box-sizing:border-box
 }
-.bangers{
-   font-family: bangers,"cursive",
-   "sans-serif";
+.aladin {
+  font-family: Light,"cursive",
+  "sans-serif";
 }
-.big{
-   font-family: big,"cursive",
-   "sans-serif";
+.bangers {
+  font-family: bangers,"cursive",
+  "sans-serif";
 }
-.praise{
-   font-family: praise,"cursive",
-   "sans-serif";
+.big {
+  font-family: big,"cursive",
+  "sans-serif";
 }
-.aladin{
-   font-family: Light,"cursive",
-   "sans-serif";
+.praise {
+  font-family: praise,"cursive",
+  "sans-serif";
 }
-@media screen and (min-width:400px){
+.aladin {
+  font-family: Light,"cursive",
+  "sans-serif";
+}
+@media screen and (min-width:400px) {
   *,
- html,
-  body{
+  html,
+  body {
     font-size: 8px;
+  }
 }
-}
-
-
