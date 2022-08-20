@@ -73,7 +73,7 @@ const CreateProductPage = () => {
   };
 
 
-  const reducer = (state.action) => {
+  const reducer = (state,action) => {
     switch (action.type) {
       case 'setName':
         return {
