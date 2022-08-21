@@ -36,7 +36,7 @@ export async function getServerSideProps(context) {
   await dbConnect()
 
   /* find all the data in our database */
-  const product = await Product.find({name:search}
+  const product = await Product.find({name:search})
    const res = [...product]
   const results= res.map((doc)=>{
     const re = doc.toObject();
