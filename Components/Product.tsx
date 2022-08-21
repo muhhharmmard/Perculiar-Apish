@@ -26,7 +26,7 @@ const Product = ({
     })
   }
   return(
-    <Card className="h-[37vh] w-[35vw] p-8 flex flex-col align-center my-8 mx-8 leading-8 dark:bg-blue-900 align-center big justify-center rounded-3xl praise border-2 border-solid" raised={true} onClick={navToProduct}>
+    <Card className="h-[37vh] w-[35vw] p-8 flex flex-col align-center glass my-8 mx-8 leading-8 dark:bg-blue-900 align-center big justify-center rounded-3xl praise border-2 border-solid" raised={true} onClick={navToProduct}>
     <Paper raised={true} className="h-1/2 border-4 border-dotted">
     <img src={product.image} className="rounded-lg shadow-lg h-full w-[35vw]" />
     </Paper>
