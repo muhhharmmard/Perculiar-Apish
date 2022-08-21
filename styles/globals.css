@@ -47,15 +47,13 @@ body {
   font-size: 5px;
 
 
-
-  background-image: linear-gradient(#000,#e056fd);
   color: #d902ee;
   font-family: bangers,"cursive",
   "sans-serif";
 }
 .Layout {
 
-  background-image: linear-gradient(#0652c5,#D4418f);
+
   box-sizing:border-box
 }
 .aladin {

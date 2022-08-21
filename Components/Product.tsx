@@ -3,8 +3,7 @@ import {
   Card,
   Paper,
   Box,
-  Container,
-  Badge
+  Container
 } from "@mui/material"
 import {
   useRouter
@@ -27,12 +26,12 @@ const Product = ({
     })
   }
   return(
-    <Card className="h-[30vh] w-full p-8 flex my-8 leading-8  align-center big justify-center rounded-3xl" raised={true} onClick={navToProduct}>
-    <figure className="">
+    <Card className="h-[37vh] w-[35vw] p-8 flex flex-col align-center my-8 mx-8 leading-8 dark:bg-blue-900 align-center big justify-center rounded-3xl praise border-2 border-solid" raised={true} onClick={navToProduct}>
+    <Paper raised={true} className="h-1/2 border-4 border-dotted">
     <img src={product.image} className="rounded-lg shadow-lg h-full w-[35vw]" />
-    </figure>
-    <div className="container m-2 leading-8">
-    <Typography variant="h3">
+    </Paper>
+    <Paper className="container m-2 leading-8 p-4 m-2 border-2  big praise">
+    <Typography variant="h4">
     {product.title}
     </Typography>
     <br />
@@ -43,7 +42,7 @@ const Product = ({
     <Typography variant="h5">
     Category:{product.category}
     </Typography>
-  </div>
+  </Paper>
     </Card>
 )
 }

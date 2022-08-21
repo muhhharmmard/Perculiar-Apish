@@ -5,7 +5,7 @@ import {
   Typography
 } from "@mui/material"
 
-import DeptPro from "./DeptPro"
+import Products from "./Products"
 
 import {
   CATEGORIES,
@@ -26,9 +26,10 @@ const Category = ({
     </Typography>
     </Container>
     <Container className="flex flex-wrap p-2 m-2 ">
-    {
+    {/*
       category.products.map((prod)=> <DeptPro product={prod} />)
-      }
+      */}
+      <Products products={category.products} />
     </Container>
     </Paper>
   )

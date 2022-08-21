@@ -8,7 +8,7 @@ import Product from "./Product";
 
 const Products = ({ products }: PRODUCTS) => {
   return (
-    <Container className="flex p-4 m-2">
+    <Container className="w-screen flex flex-wrap p-4 m-2">
       {products.map((product) => (
         <Product product={product} key={product._id} />
       ))}
