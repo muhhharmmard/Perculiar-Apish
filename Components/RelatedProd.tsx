@@ -1,29 +1,34 @@
-import { useState } from 'react'
-import { useRouter } from 'next/router'
+import {
+  useState
+} from 'react'
+import {
+  useRouter
+} from 'next/router'
 import Link from 'next/link'
 import {
   Typography,
-  Card
+  Card,
+  Paper
 } from "@mui/material"
-import DeptPro from "./DeptPro"
-import { CATEGORY } from "../store/types"
-const RelatedProd = ({category}: CATEGORY):JSX.Element => {
+import Products from "./Products"
+import {
+  CATEGORY
+} from "../store/types"
+const RelatedProd = ({
+  category
+}: CATEGORY): JSX.Element => {
   const router = useRouter()
-  const [message, setMessage]: string = useState('')
- 
+  const [message,
+    setMessage]: string = useState('')
+
   return (
     <Card>
-        <div className=" w-full overflow-scroll flex overflow-scroll p-4">
- 
-    {
-      category.products.map(pro=>
-        <DeptPro product={pro}/>
-      )
-    }
-    </div>
+        <Paper className="w-full overflow-scroll m-2 flex overflow-scroll p-4">
+ <Products products={category.products} />
+    </Paper>
      </Card>
   )
- 
+
 }
 
 
