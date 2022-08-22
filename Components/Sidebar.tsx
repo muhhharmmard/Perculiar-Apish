@@ -52,35 +52,7 @@ if(products && categoriesWithProducts){
               display="inline-block"
             >
               {" "}
-              A
-            </Typography>
-            <Typography
-              variant="h1"
-              className="bg-blue-700 text-blue-300"
-              display="inline-block bangers"
-            >
-              P
-            </Typography>
-            <Typography
-              variant="h1"
-              className="bg-blue-500 text-blue-800 big"
-              display="inline-block"
-            >
-              I
-            </Typography>
-            <Typography
-              variant="h1"
-              className="bg-blue-300 text-blue-700"
-              display="inline-block aladin"
-            >
-              S
-            </Typography>
-            <Typography
-              variant="h1"
-              className="bg-blue-100 text-blue-900"
-              display="inline-block"
-            >
-              H
+              APISH
             </Typography>
           </Container>
         </Link>
@@ -89,7 +61,11 @@ if(products && categoriesWithProducts){
           <Divider />
           <Toolbar />
           <Box className="text-9xl">
-            <Link href="/">Apish</Link>
+            <Link href="/">
+            <Typography variant="h4">
+            Apish
+</Typography>
+</Link>
           </Box>
           <Divider />
           <Typography variant="h1">Departments</Typography>
@@ -118,7 +94,7 @@ if(products && categoriesWithProducts){
 }
   return (
     <>
-      <Button onClick={() => handleDrawerToggle()}>🙃</Button>
+      <Button variant="contained" className="btn" onClick={() => handleDrawerToggle()}>🙃</Button>
       <Drawer
         variant="temporary"
         open={mobileOpen}

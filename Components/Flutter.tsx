@@ -32,6 +32,7 @@ const BuyProd =({user, amount })=>{
      
 
       <Button
+variant="contained" className="btn"
         onClick={() => {
           handleFlutterPayment({
             callback: (response) => {

@@ -171,7 +171,7 @@ const ProductPage = () => {
             <BuyProd amount={prod[0].price} user={session.user} />
 
             <Button
-          className=""
+      variant="contained" className="btn"
           onClick={() => addProdToCart(prod[0], session.user)}
           >
               {" "}
@@ -179,7 +179,7 @@ const ProductPage = () => {
             </Button>
 
             <Button
-          className=""
+         variant="contained" className="btn"
           onClick={() => addProdToWishList(prod[0], session.user)}
           >
               {" "}

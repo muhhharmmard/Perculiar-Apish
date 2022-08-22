@@ -1,8 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@tailwind base;
-@tailwind components;
 @font-face {
   font-family: "aladin"; /*Can be any text*/
   src: local("./fonts/aladin.ttf"),
@@ -45,16 +43,11 @@
 html,
 body {
   font-size: 5px;
-
-
-  color: #d902ee;
+  @apply dark:bg-blue-900;
+  @apply bg-blue-50;
+  @apply dark:text-indigo-100;
   font-family: bangers,"cursive",
   "sans-serif";
-}
-.Layout {
-
-
-  box-sizing: border-box
 }
 .aladin {
   font-family: Light,"cursive",
@@ -76,10 +69,8 @@ body {
   font-family: Light,"cursive",
   "sans-serif";
 }
-.glassContainer {
-  background: linear-gradient(360deg,blue,red);
-  -webkit-tap-highlight-color: rgba(0,0,0,0.1);
-}
+
+/*
 .glass {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, .1), -4px -4px 10px rgba(0, 0, 0, .1);
   background: rgba(255, 255, 255,0.1);
@@ -90,7 +81,7 @@ body {
   background-color: rgba(255, 255, 255, .1);
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
-}
+}*/
 @media screen and (min-width:400px) {
   *,
   html,

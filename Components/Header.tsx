@@ -33,7 +33,7 @@ const Header = () => {
     toggleTheme
   } = useAppContext();
   return(
-    <Card className=" font-2xl w-screen flex flex-col justify-center  text-center dark:bg-blue-700 bg-blue-100 praise">
+    <Card className=" font-2xl w-screen flex flex-col justify-center  text-center praise">
    <div className="flex">
      <Sidebar />
     <Typography variant="h1" className="flex-1 w-4/5 text-center aladin">
@@ -43,14 +43,14 @@ const Header = () => {
     {
       data ? (
       <Container className="">
-        <Button onClick={(e: React.mouseEvent < HTMLElement >)=>signOut()}>
+        <Button onClick={(e: React.mouseEvent < HTMLElement >)=>signOut()} variant="contained" className="btn">
       <Typography variant="h5">
    signOut
       </Typography>
       </Button>
       </Container>
       ): (
-        <Button onClick={(e: React.mouseEvent < HTMLElement >)=>signIn()}>
+        <Button variant="contained" className="btn" onClick={(e: React.mouseEvent < HTMLElement >)=>signIn()}>
       <Typography variant="h5">
       Sign In
       </Typography>
@@ -61,7 +61,7 @@ const Header = () => {
     </div>
   <Container className="flex ">
     <Search />
-    <Button className="bg-blue-900" onClick={()=>toggleTheme}>{ theme === "dark" ? <Typography variant="h5">Light mode</Typography>: <Typography variant="h5">Dark mode</Typography>}
+    <Button variant="contained" className="btn" onClick={()=>toggleTheme}>{ theme === "dark" ? <Typography variant="h5">Light mode</Typography>: <Typography variant="h5">Dark mode</Typography>}
     </Button>
     </Container>
     </Card>
