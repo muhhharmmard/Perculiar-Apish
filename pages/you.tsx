@@ -50,7 +50,7 @@ const You = (): JSX.Element => {
     products
   } = user
   return (
-    <Container>
+    <Card>
     <Paper className="flex flex-col p-4 m-2 text-center align-center justify-center">
     <img src={image} className="rounded-3xl" />
     <Typography variant="h4">{name} </Typography>
@@ -78,7 +78,7 @@ const You = (): JSX.Element => {
     ))}
           </List>
     </Paper>
-    </Container>
+    </Card>
 )
 }
 

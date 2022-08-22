@@ -154,7 +154,7 @@ const ProductPage = () => {
       <Card key={prod[0]._id} className="flex flex-col bangers justify-center w-screen text-center m-2 p-2 glassContainer">
           {/* <Button onlick={handleDelete}>Delete</Button>
    <Button onclick={handleEdit}>Edit</Button>*/}
- <Paper className="">
+ <Paper className="m-4 p-4">
   <Paper raised={true} className="md:flex w-screen justify-center glass border-2 border-dotted rounded-3xl flex-row text-center">
   <Paper raised={true} className="flex w-screen justify-center glass border-2 border-groove rounded-3xl flex-row text-center">
    <img src={prod[0].image} className="rounded-4xl shadow-xl h-[15vh] w-[15vw]" />

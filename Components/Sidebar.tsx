@@ -42,8 +42,8 @@ const {
 if(products && categoriesWithProducts){
   const data= categoriesWithProducts
   var side = (
-    <Paper className="text-bold bg-green-50 z-30 absolute h-screen text-center">
-      <Container className="h-32 w-full p-2 flex content-center justify-content align-center">
+    <Paper className="text-bold z-30 absolute h-screen w-[25vw] text-center">
+      <Container className="h-32 p-2 flex content-center justify-content align-center">
         <Link href="/" className="text-center w-full text-black flex justify-center">
           <Container>
             <Typography
@@ -56,36 +56,35 @@ if(products && categoriesWithProducts){
             </Typography>
           </Container>
         </Link>
-        <Container>
-          <Toolbar />
-          <Divider />
-          <Toolbar />
-          <Box className="text-9xl">
-            <Link href="/">
-            <Typography variant="h4">
-            Apish
+    <Container>
+   <Toolbar />
+  <Divider />
+  <Toolbar />
+   <Box className="text-9xl">
+    <Link href="/">
+     <Typography variant="h4">
+      Apish
 </Typography>
 </Link>
-          </Box>
-          <Divider />
-          <Typography variant="h1">Departments</Typography>
-          <List>
-            {data.map((dept, s) => (
-              <ListItemButton>
-                <Link
-                  href={{
-                    pathname: "/categories/[id]",
-                    query: {
-                      id: dept.name,
-                    },
-                  }}
-                >
-                  <Typography variant="h1">
-                    <ListItemText primary={dept.name} />
-                  </Typography>
-                </Link>
-              </ListItemButton>
-            ))}
+  </Box> 
+  <Divider />
+  <Typography variant="h1">Categories</Typography>
+    <List>
+    {data.map((dept, s) => (
+     <ListItemButton>
+     <Link  href={{
+      pathname: "/categories/[id]",
+     query: {
+     id: dept.name,
+    },
+   }}
+  >
+  <Typography variant="h1">
+     <ListItemText primary={dept.name} />
+    </Typography>
+  </Link>
+  </ListItemButton>
+     ))}
           </List>
         </Container>
       </Container>
@@ -104,7 +103,7 @@ if(products && categoriesWithProducts){
         }}
         sx={{
           display: { xs: "block", sm: "none" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
+          "& .MuiDrawer-paper": { boxSizing: "border-box", width: "25vw" },
         }}
       >
         {side}
@@ -113,7 +112,7 @@ if(products && categoriesWithProducts){
         variant="permanent"
         sx={{
           display: { xs: "none", sm: "block" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
+          "& .MuiDrawer-paper": { boxSizing: "border-box", width:"25vw" },
         }}
         open
       >
