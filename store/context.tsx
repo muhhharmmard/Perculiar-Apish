@@ -49,6 +49,9 @@ const AppWrapper = ({
           setTheme('light')
           
         }
+        if(window !== undefined){
+        localStorage.setItem("theme",theme)
+        }
         alert(theme)
       }
 
@@ -85,10 +88,16 @@ const AppWrapper = ({
   // defaults to light theme
   // set user's preferred color scheme on first load
   useLayoutEffect(() => {
+    const themeFromLs:string = localStorage.getItem("theme")
+    if((themeFromLs === "dark") || (themeFromLs === "light")){
+      setTheme(themeFromLs)
+    }
+    else{
     setTheme(
       !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
       ? 'dark': 'light'
     )
+    }
   },[])
 
   // change theme
