@@ -32,9 +32,10 @@ const Header = () => {
     theme,
     toggleTheme
   } = useAppContext();
+
   return(
     <Card className=" font-2xl w-screen flex flex-col justify-center  text-center praise">
-   <div className="flex">
+    <div className="flex">
      <Sidebar />
     <Typography variant="h1" className="flex-1 w-4/5 text-center aladin">
     Apish
@@ -42,15 +43,15 @@ const Header = () => {
     <Typography variant="h4">
     {
       data ? (
-      <Container className="">
-        <Button onClick={(e: React.mouseEvent < HTMLElement >)=>signOut()} variant="contained" className="btn">
+        <Container className="">
+        <Button onClick={(e: React.mouseEvent < HTMLElement >)=>signOut()} className="btn">
       <Typography variant="h5">
    signOut
       </Typography>
       </Button>
       </Container>
       ): (
-        <Button variant="contained" className="btn" onClick={(e: React.mouseEvent < HTMLElement >)=>signIn()}>
+        <Button className="btn" onClick={(e: React.mouseEvent < HTMLElement >)=>signIn()}>
       <Typography variant="h5">
       Sign In
       </Typography>
@@ -59,12 +60,22 @@ const Header = () => {
       }
     </Typography>
     </div>
-  <Container className="flex ">
+    <Container className="flex ">
     <Search />
-    <Button variant="contained" className="btn" onClick={()=>toggleTheme()}>{ theme === "dark" ? <Typography variant="h5">Light mode</Typography>: <Typography variant="h5">Dark mode</Typography>}
-    </Button>
+    { theme === "dark" ? (
+        <Typography variant="h5">
+    <Button className="btn" onClick={()=> toggleTheme() }>Light mode
+      </Button>
+      </Typography>):(
+
+      <Typography variant="h5">
+
+    <Button className="btn" onClick={()=> toggleTheme()
+        }>
+Dark mode</Button></Typography>)
+      }
     </Container>
-    </Card>
-  )
+  </Card>
+)
 }
 export default Header

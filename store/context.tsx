@@ -35,9 +35,23 @@ function usePrevious(theme) {
   return ref.current
 }
 
+
 const AppWrapper = ({
   children
 }) => {
+  
+  const [theme, setTheme] = useState('light')
+
+ function toggleThemeF() {
+        if (theme === 'light') {
+          setTheme('dark')
+        } else{
+          setTheme('light')
+          
+        }
+        alert(theme)
+      }
+
   const {
     datum
   } = useSession();
@@ -46,10 +60,11 @@ const AppWrapper = ({
   const [value,
     setValue] = useState({
       user: null,
-      products: [],
-      categories: [],
-      categoriesWithProducts: [],
-      theme:"light"
+      products: null,
+      categories: null,
+      categoriesWithProducts: null,
+      theme: "light",
+      toggleTheme:toggleThemeF,
     });
 
   const {
@@ -68,16 +83,13 @@ const AppWrapper = ({
     categories) => {};
 
   // defaults to light theme
-  const [theme, setTheme] = useState('light')
-
   // set user's preferred color scheme on first load
   useLayoutEffect(() => {
-    /*setTheme(
+    setTheme(
       !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
       ? 'dark': 'light'
-    )*/
-  },
-    [])
+    )
+  },[])
 
   // change theme
   const oldTheme = usePrevious(theme)
@@ -117,24 +129,18 @@ const AppWrapper = ({
       }
       const categoriesWithProducts = allCats;
 
-      function toggleThemeF() {
-        alert(theme)
-        if (theme === 'light') {
-          setTheme('dark')
-        } else setTheme('light')
-      }
-
+     
       setValue({
         user: useR,
         products: prods,
         categories: new Set(categories),
         categoriesWithProducts: categoriesWithProducts,
         theme: theme,
-        toggleTheme:toggleThemeF()
+        toggleTheme: toggleThemeF
       });
     }
   },
-    [data]);
+    [data,theme]);
   if (error) {
     error.data.isLoggedIn && router.push("/login");
     return <Typography variant="h1"></Typography>;

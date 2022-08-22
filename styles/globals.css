@@ -45,9 +45,16 @@ body {
   font-size: 5px;
   @apply dark:bg-blue-900;
   @apply bg-blue-50;
-  @apply dark:text-indigo-100;
+  @apply text-sky-600;
+  @apply dark:text-fuchsia-600;
   font-family: bangers,"cursive",
   "sans-serif";
+}
+.btn {
+  @apply bg-blue-900;
+  @apply dark:bg-blue-50;
+  @apply dark:text-fuchsia-600;
+  @apply bangers
 }
 .aladin {
   font-family: Light,"cursive",

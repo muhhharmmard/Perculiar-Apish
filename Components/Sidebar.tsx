@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Loader from "./Loader";
-const drawerWidth = 240;
+const drawerWidth = 200;
 import Link from "next/link";
 
 import { useSession } from "next-auth/react";
@@ -44,11 +44,11 @@ if(products && categoriesWithProducts){
   var side = (
     <Paper className="text-bold bg-green-50 z-30 absolute h-screen text-center">
       <Container className="h-32 w-full p-2 flex content-center justify-content align-center">
-        <Link href="/" className="text-center text-black flex">
+        <Link href="/" className="text-center w-full text-black flex justify-center">
           <Container>
             <Typography
               variant="h1"
-              className="bg-blue-900 text-blue-100 praise"
+              className=" praise"
               display="inline-block"
             >
               {" "}
@@ -94,8 +94,8 @@ if(products && categoriesWithProducts){
 }
   return (
     <>
-      <Button variant="contained" className="btn" onClick={() => handleDrawerToggle()}>🙃</Button>
-      <Drawer
+      <Button variant="contained" className="btn" onClick={() => handleDrawerToggle()}>😒</Button>
+      <SwipeableDrawer
         variant="temporary"
         open={mobileOpen}
         onClose={handleDrawerToggle}
@@ -108,7 +108,7 @@ if(products && categoriesWithProducts){
         }}
       >
         {side}
-      </Drawer>
+      </SwipeableDrawer>
       <Drawer
         variant="permanent"
         sx={{
