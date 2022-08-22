@@ -40,42 +40,30 @@ const Header = () => {
     <Typography variant="h1" className="flex-1 w-4/5 text-center aladin">
     Apish
     </Typography>
-    <Typography variant="h4">
-    {
-      data ? (
         <Container className="">
-        <Button onClick={(e: React.mouseEvent < HTMLElement >)=>signOut()} className="btn">
-      <Typography variant="h5">
-   signOut
+      <Typography variant="h4">
+        <Button onClick={(e: React.mouseEvent < HTMLElement >)=>router.push("/you")} className="btn">
+      You
+    </Button>
       </Typography>
-      </Button>
-      </Container>
-      ): (
-        <Button className="btn" onClick={(e: React.mouseEvent < HTMLElement >)=>signIn()}>
-      <Typography variant="h5">
-      Sign In
-      </Typography>
-      </Button>
-      )
-      }
-    </Typography>
+    </Container>
     </div>
-    <Container className="flex ">
+    <Container className="flex big">
     <Search />
     { theme === "dark" ? (
         <Typography variant="h5">
     <Button className="btn" onClick={()=> toggleTheme() }>Light mode
       </Button>
-      </Typography>):(
+      </Typography>): (
 
-      <Typography variant="h5">
+        <Typography variant="h5">
 
     <Button className="btn" onClick={()=> toggleTheme()
-        }>
+          }>
 Dark mode</Button></Typography>)
       }
     </Container>
   </Card>
-)
+  )
 }
 export default Header
