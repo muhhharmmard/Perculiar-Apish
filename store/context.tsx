@@ -130,7 +130,7 @@ const AppWrapper = ({
         categories: new Set(categories),
         categoriesWithProducts: categoriesWithProducts,
         theme: theme,
-        toggleTheme: ()=>{ toggleThemeF()}
+        toggleTheme:toggleThemeF()
       });
     }
   },

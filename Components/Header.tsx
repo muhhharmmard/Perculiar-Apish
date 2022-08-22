@@ -61,7 +61,7 @@ const Header = () => {
     </div>
   <Container className="flex ">
     <Search />
-    <Button variant="contained" className="btn" onClick={()=>toggleTheme}>{ theme === "dark" ? <Typography variant="h5">Light mode</Typography>: <Typography variant="h5">Dark mode</Typography>}
+    <Button variant="contained" className="btn" onClick={()=>toggleTheme()}>{ theme === "dark" ? <Typography variant="h5">Light mode</Typography>: <Typography variant="h5">Dark mode</Typography>}
     </Button>
     </Container>
     </Card>
