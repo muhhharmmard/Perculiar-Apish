@@ -1,12 +1,9 @@
 {
   "name": "Apish",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:ts": "yarn dev & yarn ts:watch",
-    "ts": "tsc",
-    "ts:watch": "yarn ts --watch",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -39,8 +36,7 @@
     "react-redux": "^8.0.2",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
-    "tailwind": "",
-    "tailwindcss-multi-theme": "^1.0.4"
+    "tailwind": ""
   },
   "devDependencies": {
     "@types/node": "18.0.0",

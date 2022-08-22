@@ -1,8 +1,6 @@
 #! /usr/bin/env node
 var userArgs = process.argv.slice(2);
 import Product from './Models/Product.js'
-import Department from './Models/Department.js'
-import Tag from './Models/Tag.js'
 import mongoose from 'mongoose'
 var mongoDB = userArgs[0];
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
