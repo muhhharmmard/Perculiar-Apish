@@ -14,9 +14,9 @@ import {
   Button,
   Container,
   Paper,
-  
-  
-  
+
+
+
 
 } from "@mui/material";
 import {
@@ -151,40 +151,33 @@ const ProductPage = () => {
           <title>{prod[0].title}</title>
           <link rel="icon" href={prod[0].image} />
         </Head>
-        <Card
-        key={prod[0]._id}
-        className="flex flex-col bangers justify-center w-screen text-center m-2 p-2 glassContainer"
-        >
+      <Card key={prod[0]._id} className="flex flex-col bangers justify-center w-screen text-center m-2 p-2 glassContainer">
           {/* <Button onlick={handleDelete}>Delete</Button>
    <Button onclick={handleEdit}>Edit</Button>*/}
-          <div className="">
-            <Paper raised={true} className="md:flex w-screen justify-center glass border-2 border-dash rounded-3xl flex-row text-center">
-              <img
-          src={prod[0].image}
-          className="rounded-4xl shadow-xl h-[15vh] w-[15vw]"
-          />
-                <Typography variant="h2" className="big">{prod[0].title}</Typography>
-            </Paper>
-            <Typography variant="h3">Price:{prod[0].price}</Typography>
-            <Typography variant="h4">Trending in {prod[0].category}</Typography>
+ <Paper className="">
+  <Paper raised={true} className="md:flex w-screen justify-center glass border-2 border-dotted rounded-3xl flex-row text-center">
+  <Paper raised={true} className="flex w-screen justify-center glass border-2 border-groove rounded-3xl flex-row text-center">
+   <img src={prod[0].image} className="rounded-4xl shadow-xl h-[15vh] w-[15vw]" />
+   </Paper>
+   <Typography variant="h2" className="big">{prod[0].title}</Typography>
+   </Paper>
+    <Typography variant="h3">Price:{prod[0].price}</Typography>
+    <Typography variant="h4">Trending in {prod[0].category}</Typography>
+      </Paper>
+  <div className="p-2 m-3">
+   <Typography variant="h6">{prod[0].description}</Typography>
       </div>
-          <div className="p-2 m-3">
-            <Typography variant="h6">{prod[0].description}</Typography>
-      </div>
-          {session ? (
+   {session ? (
         <Paper className="p-2 flex w-screen justify-center">
-            <BuyProd amount={prod[0].price} user={session.user} />
-
-            <Button
-      variant="contained" className="btn"
-          onClick={() => addProdToCart(prod[0], session.user)}
+  <BuyProd amount={prod[0].price} user={session.user} />
+  <Button
+          variant="contained" className="btn" onClick={() => addProdToCart(prod[0], session.user)}
           >
               {" "}
               { remove ? "Remove": "Add" } to Cart{" "}
             </Button>
-
             <Button
-         variant="contained" className="btn"
+          variant="contained" className="btn"
           onClick={() => addProdToWishList(prod[0], session.user)}
           >
               {" "}
