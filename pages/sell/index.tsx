@@ -37,7 +37,15 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
+      <Typography variant="h2">
+      Sell at Apish 
+      </Typography>
+      <Typography variant="body1" className="bangers">
+     Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. Sell at Apish. 
+      </Typography>
+      <Paper>
       <Button onClick={getStarted}>Get Started</Button>
+      </Paper>
       </Container>
 </div>
 )

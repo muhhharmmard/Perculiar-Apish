@@ -44,13 +44,13 @@ const Home: NextPage = () => {
         <meta name="description" content="Sell at Apish" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container>
-      <header>
+      <Card>
+      <Paper>
       <Typography variant="h2">Welcome,{user.name}</Typography>
-    </header>
-    <main>
+    </Paper>
+    <Paper>
     <Container>
-    <Container lassName= "flex justify-end">
+    <Container className= "flex justify-end">
     <Button onClick={createNewProd}>Add Product</Button>
     </Container>
     <Typography variant="h3">Your Products</Typography>
@@ -58,8 +58,8 @@ const Home: NextPage = () => {
         user.products.length > 0 ?
         <SellerProducts seller={user} />: "No products "}
     </Container>
-    </main>
-      </Container>
+    </Paper>
+      </Card>
 </div>
 )
 

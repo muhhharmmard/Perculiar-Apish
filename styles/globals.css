@@ -50,6 +50,12 @@ body {
   font-family: bangers,"cursive",
   "sans-serif";
 }
+.glass{
+  @apply bg-clip-padding;
+@apply backdrop-filter;
+@apply backdrop-blur-xl;
+@apply bg-opacity-60;
+}
 .btn {/*
   @apply bg-blue-900;
   @apply dark:bg-blue-50;
