@@ -1,15 +1,23 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import {
+  createApi,
+  fetchBaseQuery
+} from "@reduxjs/toolkit/query/react";
 
 // Define a service using a base URL and expected endpoints
 export const userApi = createApi({
   reducerPath: "userApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "/api/users" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "/api/users"
+  }),
+  tagTypes: ["Users"]
   endpoints: (builder) => ({
     getAllUsers: builder.query({
       query: () => "/",
+      providesTags: ["Users"]
     }),
     getUserById: builder.query({
       query: (id) => `/${id}`,
+      providesTags: ["Users"]
     }),
     deleteUser: builder.mutation({
       query: (id) => ({
@@ -17,6 +25,7 @@ export const userApi = createApi({
         method: "DELETE",
         body: id,
       }),
+        invalidatesTags: ["Users"]
     }),
     createUser: builder.mutation({
       query: (body) => ({
@@ -24,13 +33,17 @@ export const userApi = createApi({
         method: "POST",
         body: body,
       }),
+        invalidatesTags: ["Users"]
     }),
     editUser: builder.mutation({
-      query: ({ id, ...body }) => ({
+      query: ({
+        id, ...body
+      }) => ({
         url: `/${id}`,
         method: "PUT",
         body: body,
       }),
+        invalidatesTags: ["Users"]
     }),
   }),
 });
