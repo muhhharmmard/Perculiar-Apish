@@ -8,7 +8,7 @@ import Product from "./Product";
 
 const Products = ({ products }: PRODUCTS) => {
   return (
-    <Paper className="w-screen flex glassContainer flex-wrap p-4 m-2">
+    <Paper className="w-screen flex bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 flex-wrap p-4 m-2">
       {products.map((product) => (
         <Product product={product} key={product._id} />
       ))}

@@ -1,4 +1,4 @@
-import {
+import React,{
   createContext,
   useState,
   useContext,
@@ -52,7 +52,6 @@ const AppWrapper = ({
         if(window !== undefined){
         localStorage.setItem("theme",theme)
         }
-        alert(theme)
       }
 
   const {
@@ -103,11 +102,8 @@ const AppWrapper = ({
   // change theme
   const oldTheme = usePrevious(theme)
   useLayoutEffect(() => {
-    document.documentElement.classList.remove(`theme-${oldTheme}`)
     document.documentElement.classList.remove(oldTheme)
     document.documentElement.classList.add(theme)
-
-    document.documentElement.classList.add(`theme-${theme}`)
   },
     [theme,
       oldTheme])
@@ -154,7 +150,9 @@ const AppWrapper = ({
     error.data.isLoggedIn && router.push("/login");
     return <Typography variant="h1"></Typography>;
   }
-  if (isLoading) {}
+  if (isLoading || !datum) {
+    return <Loader/>
+  }
   if (data) {}
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

@@ -6,6 +6,9 @@ import {
   Button,
   Container
 } from "@mui/material"
+import {
+  useRouter
+} from "next/router"
 import Search from "./Search"
 import React, {
   useState,
@@ -24,6 +27,7 @@ import {
 } from "../store/context"
 
 const Header = () => {
+  const router = useRouter()
   const {
     data
   } = useSession();

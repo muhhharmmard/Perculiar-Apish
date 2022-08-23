@@ -1,6 +1,7 @@
 import {
   Card,
-  Paper
+  Paper,
+  Typography
 } from "@mui/material"
 const Loader = ({
   w

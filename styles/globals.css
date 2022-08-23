@@ -32,12 +32,6 @@
   url("../fonts/aladin.ttf") format("truetype");
 
 }
-@font-face {
-  font-family: "Light"; /*Can be any text*/
-  src: local("../fonts/aladin.ttf"),
-  url("../fonts/aladin.ttf") format("truetype");
-
-}
 
 *,
 html,
@@ -49,12 +43,6 @@ body {
   @apply dark:text-fuchsia-600;
   font-family: bangers,"cursive",
   "sans-serif";
-}
-.glass{
-  @apply bg-clip-padding;
-@apply backdrop-filter;
-@apply backdrop-blur-xl;
-@apply bg-opacity-60;
 }
 .btn {/*
   @apply bg-blue-900;

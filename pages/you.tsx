@@ -11,8 +11,9 @@ import {
 } from "@mui/material"
 import {
   useAppContext
-} from "../../store/context"
+} from "../store/context"
 
+import Loader from "../Components/Loader"
 import {
   useRouter
 } from "next/router"
@@ -40,8 +41,8 @@ const You = (): JSX.Element => {
     if (!user) {
       router.push("/auth/signin")
     }
-  },
-    [user])
+  },[user])
+    if(user){
   const {
     name,
     image,
@@ -79,7 +80,8 @@ const You = (): JSX.Element => {
           </List>
     </Paper>
     </Card>
-)
+)}
+return <Loader/>
 }
 
 
