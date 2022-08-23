@@ -23,7 +23,7 @@
     "@reduxjs/toolkit": "^1.8.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-    "firebase": "4.6.2",
+    "firebase": "",
     "flutterwave-react-v3": "^1.2.1",
     "jest": "^28.1.3",
     "jest-environment-jsdom": "^28.1.3",
@@ -34,8 +34,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.2",
-    "redux": "^4.2.0",
-    "redux-thunk": "^2.4.1",
     "tailwind": ""
   },
   "devDependencies": {
@@ -43,7 +41,6 @@
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
     "autoprefixer": "^10.4.7",
-    "eruda": "^2.5.0",
     "eslint": "8.18.0",
     "eslint-config-next": "12.1.6",
     "postcss": "^8.4.14",
